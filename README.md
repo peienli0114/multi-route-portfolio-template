@@ -470,13 +470,56 @@ yarn build
 
 ---
 
-## 📄 授權 License
+## �‍💻 作者 Author
 
-MIT License — 歡迎自由使用與修改。
+**李佩恩 Pei-En Li**
+
+工業設計背景出身，擁有 3 年半設計實務經驗，研究所期間轉向使用者研究與數據 / AI 應用。擅長結合設計研究、資料洞察與技術評估，以跨領域視角發掘問題並提出解方。
+
+🔗 **作品集網站**：[peien-portfolio.vercel.app](https://peien-portfolio.vercel.app/)
+
+---
+
+## 🤖 AI 共創 Co-created with AI
+
+本專案由作者與多款 AI 工具協作開發，包括：
+
+| AI 工具 | 用途 |
+| :--- | :--- |
+| **OpenAI Codex** | 程式碼生成與邏輯協助 |
+| **Google Gemini CLI** | 架構規劃與文件撰寫 |
+| **Antigravity** | 進階程式碼開發與除錯 |
+
+> 本專案展示了人類設計思維與 AI 輔助開發的協作成果。所有設計決策、產品需求與使用者體驗均由作者主導，AI 工具作為高效的開發夥伴加速實現。
+
+---
+
+## �📄 授權 License
+
+MIT License with Attribution — 歡迎自由使用與修改，但請標註來源。
+
+使用本模板時，請在你的專案中保留以下來源標註（擇一即可）：
+
+**方式一：在 README 或頁尾加入文字**
+
+```
+Built with Multi-Route Portfolio Template by Pei-En Li
+https://github.com/你的來源repo連結
+```
+
+**方式二：在 HTML 中加入註解**
+
+```html
+<!-- Built with Multi-Route Portfolio Template by Pei-En Li -->
+<!-- https://github.com/你的來源repo連結 -->
+```
+
+> 你不需要在頁面顯眼處放置標註，只要在原始碼或文件中保留即可。感謝你的尊重與支持！🙏
 
 ---
 
 <p align="center">
-  Built with ❤️ as a portfolio template for job seekers.<br/>
+  Built with ❤️ and 🤖 as a portfolio template for job seekers.<br/>
+  由佩恩與 AI 共同打造，獻給每一位正在求職的你。<br/><br/>
   如果覺得有幫助，歡迎 ⭐ Star 支持！
 </p>

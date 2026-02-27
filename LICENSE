@@ -1,6 +1,9 @@
 MIT License
 
-Copyright (c) 2026 Pei-En Li
+Copyright (c) 2026 Pei-En Li (李佩恩)
+Portfolio: https://peien-portfolio.vercel.app/
+
+Co-created with AI tools: OpenAI Codex, Google Gemini CLI, Antigravity
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -11,6 +14,10 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+When using this template as a base for your own project, please include a
+brief attribution in your project's README, footer, or source code. For
+example: "Built with Multi-Route Portfolio Template by Pei-En Li".
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
