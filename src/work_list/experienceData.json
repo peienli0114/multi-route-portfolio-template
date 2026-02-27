@@ -1,0 +1,119 @@
+{
+  "typeOrder": [
+    "Education",
+    "Work Experience",
+    "Program / Workshop / Side Project"
+  ],
+  "entries": [
+    {
+      "type": "Education",
+      "organisation": "National Example University - Master's in Interaction Design",
+      "role": "",
+      "begin": "2023/9/1",
+      "end": "2025/6/30",
+      "relatedWorks": [
+        "sample1",
+        "sample2"
+      ],
+      "description": "Thesis: User-Centered Design for Information Visualization\nResearch areas: UX Research, Data Visualization, Human-Computer Interaction\nPublished 2 conference papers.",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "HCI",
+        "UX Research",
+        "Data Visualization"
+      ]
+    },
+    {
+      "type": "Education",
+      "organisation": "National Example University - Bachelor's in Product Design",
+      "role": "",
+      "begin": "2018/9/1",
+      "end": "2022/6/30",
+      "relatedWorks": [],
+      "description": "Focus: Industrial Design & Product Development",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "Industrial Design",
+        "Product Design"
+      ]
+    },
+    {
+      "type": "Work Experience",
+      "organisation": "Example Tech Company",
+      "role": "UX Designer",
+      "begin": "2022/7/1",
+      "end": "2023/8/31",
+      "relatedWorks": [],
+      "description": "Led user research for 3 product features\nDesigned and implemented A/B tests improving conversion by 12%\nCollaborated with engineering team on design system components",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "UX Design",
+        "User Research",
+        "Design System"
+      ]
+    },
+    {
+      "type": "Work Experience",
+      "organisation": "Design Studio XYZ",
+      "role": "Design Intern",
+      "begin": "2021/7/1",
+      "end": "2021/12/31",
+      "relatedWorks": [],
+      "description": "Assisted in user research and competitive analysis\nCreated wireframes and prototypes for client projects",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "UX Design",
+        "Prototyping"
+      ]
+    },
+    {
+      "type": "Program / Workshop / Side Project",
+      "organisation": "Open Data Hackathon 2024 - Traffic Safety Dashboard",
+      "role": "Data Analyst / Visualization",
+      "begin": "2024/3/1",
+      "end": "2024/3/3",
+      "relatedWorks": [
+        "sample3"
+      ],
+      "description": "Built an interactive traffic safety dashboard using open government data\nWon 2nd place among 30 teams",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "Data Analysis",
+        "Hackathon",
+        "Visualization"
+      ]
+    },
+    {
+      "type": "Program / Workshop / Side Project",
+      "organisation": "Big Data Analytics Training Program",
+      "role": "Data Analysis",
+      "begin": "2022/11/1",
+      "end": "2023/1/31",
+      "relatedWorks": [],
+      "description": "Completed 400+ hours professional training\nObtained 3 certifications in data analysis and machine learning",
+      "showDefault": true,
+      "showGroups": [
+        "show_default"
+      ],
+      "tags": [
+        "Certification",
+        "Data Analysis"
+      ]
+    }
+  ]
+}

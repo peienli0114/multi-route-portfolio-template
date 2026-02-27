@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "title": "UX Research Publications",
+      "items": [
+        {
+          "title": "A Study on E-Commerce Checkout Usability",
+          "type": "Paper",
+          "description": "\"A Study on E-Commerce Checkout Usability\" - Presented at Example Conference 2025, Your Name & Advisor Name",
+          "link": "https://example.com/paper1",
+          "relatedWorks": [
+            "sample1"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data & AI Projects",
+      "items": [
+        {
+          "title": "Traffic Prediction Using Machine Learning",
+          "type": "Paper",
+          "description": "\"Traffic Prediction Using Machine Learning\" - Published at Example Conference 2024, Your Name & Teammate A",
+          "link": "https://example.com/paper2",
+          "relatedWorks": [
+            "sample3"
+          ]
+        },
+        {
+          "title": "Open Data Hackathon 2024 Award",
+          "type": "Award",
+          "description": "Open Data Hackathon 2024 - 2nd Place Award - Traffic Safety Dashboard - Your Name / Teammate A",
+          "link": null,
+          "relatedWorks": [
+            "sample3"
+          ]
+        }
+      ]
+    }
+  ]
+}

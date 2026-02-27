@@ -1,0 +1,158 @@
+{
+  "sample1": {
+    "fullName": "User Behavior Study for E-Commerce Checkout Flow Optimization",
+    "h2Name": "Master's Course Project",
+    "tableName": "User Behavior Study for E-Commerce Checkout",
+    "yearBegin": "2024",
+    "yearEnd": "2025",
+    "intro": "This project investigates user behavior and pain points during e-commerce checkout processes.\nThrough usability testing and heuristic evaluation, we identified key friction points and proposed design improvements that reduced cart abandonment by 15%.",
+    "introList": [
+      "Conducted usability testing with 20 participants across 3 platforms",
+      "Applied heuristic evaluation to identify UX issues",
+      "Proposed and validated redesign solutions with A/B testing",
+      "Published findings at a local UX research conference"
+    ],
+    "headPic": "",
+    "tags": [
+      "User Research",
+      "Usability Testing",
+      "E-Commerce",
+      "Data Analysis"
+    ],
+    "links": [
+      {
+        "name": "Project Report",
+        "link": "https://example.com/project-report"
+      }
+    ],
+    "coWorkers": [
+      {
+        "name": "Prof. Example",
+        "work": "Advisor"
+      },
+      {
+        "name": "Your Name",
+        "work": "Lead Researcher"
+      }
+    ],
+    "content": "",
+    "fullNameEn": "User Behavior Study for E-Commerce Checkout Flow Optimization",
+    "h2NameEn": "Master's Course Project",
+    "introEn": "This project investigates user behavior and pain points during e-commerce checkout processes.\nThrough usability testing and heuristic evaluation, we identified key friction points and proposed design improvements that reduced cart abandonment by 15%.",
+    "introListEn": [
+      "Conducted usability testing with 20 participants across 3 platforms",
+      "Applied heuristic evaluation to identify UX issues",
+      "Proposed and validated redesign solutions with A/B testing",
+      "Published findings at a local UX research conference"
+    ],
+    "tagsEn": [
+      "User Research",
+      "Usability Testing",
+      "E-Commerce",
+      "Data Analysis"
+    ]
+  },
+  "sample2": {
+    "fullName": "Smart Campus Navigation App UX Research & Design",
+    "h2Name": "Collaborative Course Project",
+    "tableName": "Smart Campus Navigation App UX Research",
+    "yearBegin": "2024",
+    "yearEnd": "2024",
+    "intro": "This project explores how to design an intuitive wayfinding experience for new students navigating a large university campus.\nUsing contextual inquiry and behavior mapping, we analyzed spatial behavior patterns and designed a mobile navigation prototype.\nThe final design was validated through user testing with 30 participants.",
+    "introList": [
+      "Conducted contextual inquiry with 15 new students",
+      "Created behavior maps of campus navigation patterns",
+      "Designed and prototyped a mobile navigation app in Figma",
+      "Validated design through usability testing with 30 participants"
+    ],
+    "headPic": "",
+    "tags": [
+      "UX Design",
+      "Contextual Inquiry",
+      "Behavior Mapping",
+      "Prototyping"
+    ],
+    "links": [],
+    "coWorkers": [
+      {
+        "name": "Your Name / Teammate A / Teammate B",
+        "work": "Co-researchers"
+      },
+      {
+        "name": "Prof. Advisor",
+        "work": "Course Instructor"
+      }
+    ],
+    "content": "",
+    "fullNameEn": "Smart Campus Navigation App UX Research & Design",
+    "h2NameEn": "Collaborative Course Project",
+    "introEn": "This project explores how to design an intuitive wayfinding experience for new students navigating a large university campus.\nUsing contextual inquiry and behavior mapping, we analyzed spatial behavior patterns and designed a mobile navigation prototype.\nThe final design was validated through user testing with 30 participants.",
+    "introListEn": [
+      "Conducted contextual inquiry with 15 new students",
+      "Created behavior maps of campus navigation patterns",
+      "Designed and prototyped a mobile navigation app in Figma",
+      "Validated design through usability testing with 30 participants"
+    ],
+    "tagsEn": [
+      "UX Design",
+      "Contextual Inquiry",
+      "Behavior Mapping",
+      "Prototyping"
+    ]
+  },
+  "sample3": {
+    "fullName": "City Traffic Data Analysis & Machine Learning Prediction",
+    "h2Name": "Data Science Course Final Project",
+    "tableName": "City Traffic Data Analysis & Prediction",
+    "yearBegin": "2023",
+    "yearEnd": "2024",
+    "intro": "This project analyzes urban traffic patterns using open government data.\nBy combining geospatial analysis with machine learning models, we predicted traffic congestion hotspots and proposed infrastructure improvement strategies.",
+    "introList": [
+      "Collected and cleaned 50,000+ traffic records from open data portal",
+      "Applied GIS analysis to identify spatial patterns",
+      "Built and evaluated prediction models (Random Forest, XGBoost)",
+      "Created interactive dashboard for data visualization"
+    ],
+    "headPic": "",
+    "tags": [
+      "Data Analysis",
+      "Machine Learning",
+      "GIS",
+      "Visualization",
+      "Urban Issues"
+    ],
+    "links": [
+      {
+        "name": "Dashboard Demo",
+        "link": "https://example.com/dashboard"
+      }
+    ],
+    "coWorkers": [
+      {
+        "name": "Your Name",
+        "work": "Data Collection / ML Modeling / Visualization"
+      },
+      {
+        "name": "Teammate A",
+        "work": "GIS Analysis"
+      }
+    ],
+    "content": "",
+    "fullNameEn": "City Traffic Data Analysis & Machine Learning Prediction",
+    "h2NameEn": "Data Science Course Final Project",
+    "introEn": "This project analyzes urban traffic patterns using open government data.\nBy combining geospatial analysis with machine learning models, we predicted traffic congestion hotspots and proposed infrastructure improvement strategies.",
+    "introListEn": [
+      "Collected and cleaned 50,000+ traffic records from open data portal",
+      "Applied GIS analysis to identify spatial patterns",
+      "Built and evaluated prediction models (Random Forest, XGBoost)",
+      "Created interactive dashboard for data visualization"
+    ],
+    "tagsEn": [
+      "Data Analysis",
+      "Machine Learning",
+      "GIS",
+      "Visualization",
+      "Urban Issues"
+    ]
+  }
+}

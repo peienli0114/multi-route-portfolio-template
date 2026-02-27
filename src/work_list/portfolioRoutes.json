@@ -1,0 +1,155 @@
+{
+  "default": {
+    "siteTitle": "Your Name - Portfolio 2026",
+    "sidebarTitle": "YOUR NAME",
+    "siteTitleEn": "Your Name - Portfolio 2026",
+    "sidebarTitleEn": "YOUR NAME",
+    "footer": {
+      "title": "Hi, I'm [Your Name]",
+      "message": "Thank you for reading. Feel free to reach out!",
+      "email": "your.email@example.com"
+    },
+    "cv": {
+      "link": "https://drive.google.com/your-cv-link",
+      "showGroups": [
+        "show_default"
+      ]
+    },
+    "home": {
+      "badge": "Your Name - Portfolio",
+      "title": "Design × Research × Development",
+      "intro": [
+        "Hello! I'm [Your Name], a designer/researcher/developer with a passion for creating meaningful products.",
+        "I specialize in [your specialty 1], [your specialty 2], and [your specialty 3]. With [X] years of experience, I've worked on projects spanning [domain 1] and [domain 2]."
+      ]
+    },
+    "cvSummary": [
+      "your.email@example.com",
+      "**Key Experiences**:",
+      [
+        "Master's in [Your Field], [University] (202X)",
+        "Internship at [Company] (202X)",
+        "Bachelor's in [Your Field], [University] (20XX)"
+      ],
+      "**Key Skills**:",
+      [
+        "User Research",
+        "Data Analysis & Visualization",
+        "Frontend Development",
+        "Product Design"
+      ]
+    ],
+    "categories": {
+      "User Research & Service Design": [
+        "sample1",
+        "sample2"
+      ],
+      "Data & AI Projects": [
+        "sample3"
+      ]
+    }
+  },
+  "company_a_ux": {
+    "siteTitle": "Your Name - UX Application for Company A",
+    "sidebarTitle": "YOUR NAME",
+    "siteTitleEn": "Your Name - UX Application for Company A",
+    "sidebarTitleEn": "YOUR NAME",
+    "lang": "en",
+    "footer": {
+      "title": "Hi, I'm [Your Name]",
+      "message": "Thank you for reading. Looking forward to connecting!",
+      "email": "your.email@example.com"
+    },
+    "cv": {
+      "link": "https://drive.google.com/your-cv-link",
+      "showGroups": [
+        "show_default"
+      ]
+    },
+    "home": {
+      "badge": "Application for Company A – UX Researcher",
+      "title": "User Research × Data Analysis × Prototyping",
+      "intro": [
+        "Dear Hiring Team,",
+        "I am [Your Name], a UX researcher with experience in [domain]. I am excited to apply for the UX Researcher position at Company A.",
+        "My background includes [highlight 1], [highlight 2], and [highlight 3].",
+        "Sincerely,\n[Your Name]"
+      ]
+    },
+    "cvSummary": [
+      "your.email@example.com",
+      "UX researcher with [X] years of experience in user-centered design and data analysis."
+    ],
+    "skills": [
+      {
+        "title": "UX Research Methods",
+        "categories": [
+          {
+            "name": "Qualitative",
+            "tools": [
+              {
+                "name": "User Interviews"
+              },
+              {
+                "name": "Contextual Inquiry"
+              },
+              {
+                "name": "Focus Groups"
+              }
+            ]
+          },
+          {
+            "name": "Quantitative",
+            "tools": [
+              {
+                "name": "Survey Design"
+              },
+              {
+                "name": "A/B Testing"
+              },
+              {
+                "name": "Usability Testing"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Design Tools",
+        "categories": [
+          {
+            "name": "Prototyping",
+            "tools": [
+              {
+                "name": "Figma"
+              },
+              {
+                "name": "Adobe XD"
+              }
+            ]
+          },
+          {
+            "name": "Development",
+            "tools": [
+              {
+                "name": "React / TypeScript"
+              },
+              {
+                "name": "Python"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": {
+      "Core UX Research": [
+        "sample1",
+        "sample2"
+      ],
+      "Data & Technical Projects": [
+        "sample3"
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "multi-route-portfolio-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A customizable SPA portfolio template for showcasing projects, CV, and skills. Supports multiple route-based configurations for different audiences.",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vercel/analytics": "^1.5.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "gh-pages": "^6.3.0",
+    "p5": "^2.0.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.9.6",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "sync-portfolio": "python3 scripts/generate_portfolio_map.py || python scripts/generate_portfolio_map.py",
+    "sync-works-only": "python3 scripts/generate_portfolio_map.py --skip-experience --skip-publish || python scripts/generate_portfolio_map.py --skip-experience --skip-publish",
+    "build:gh": "node scripts/build-gh.js",
+    "resize:homepage": "node scripts/resize-homepage-images.js",
+    "predeploy": "yarn build:gh",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "start:backend": "ts-node --project server/tsconfig.json server/server.ts",
+    "dev": "concurrently \"yarn start\" \"yarn start:backend\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/react-router-dom": "^5.3.3",
+    "sharp": "^0.34.5",
+    "ts-node": "^10.9.2"
+  }
+}

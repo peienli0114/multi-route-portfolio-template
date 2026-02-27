@@ -1,0 +1,148 @@
+{
+  "groups": [
+    {
+      "title": "UX Research",
+      "categories": [
+        {
+          "name": "Research Methods",
+          "tools": [
+            {
+              "name": "User Interviews"
+            },
+            {
+              "name": "Usability Testing"
+            },
+            {
+              "name": "Survey Design & Analysis"
+            },
+            {
+              "name": "Contextual Inquiry"
+            }
+          ]
+        },
+        {
+          "name": "Analysis & Evaluation",
+          "tools": [
+            {
+              "name": "Kano Model"
+            },
+            {
+              "name": "NASA-TLX"
+            },
+            {
+              "name": "Heuristic Evaluation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Analysis & AI",
+      "categories": [
+        {
+          "name": "Data Processing",
+          "tools": [
+            {
+              "name": "Python"
+            },
+            {
+              "name": "SQL"
+            },
+            {
+              "name": "Excel / Power BI"
+            }
+          ]
+        },
+        {
+          "name": "Machine Learning & AI",
+          "tools": [
+            {
+              "name": "scikit-learn"
+            },
+            {
+              "name": "LLM / RAG Integration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Development",
+      "categories": [
+        {
+          "name": "Frontend",
+          "tools": [
+            {
+              "name": "React / TypeScript"
+            },
+            {
+              "name": "HTML / CSS / JavaScript"
+            }
+          ]
+        },
+        {
+          "name": "Backend & DevOps",
+          "tools": [
+            {
+              "name": "Node.js / Express"
+            },
+            {
+              "name": "Git / Docker"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Design Tools",
+      "categories": [
+        {
+          "name": "UI/UX Design",
+          "tools": [
+            {
+              "name": "Figma"
+            },
+            {
+              "name": "Adobe XD"
+            }
+          ]
+        },
+        {
+          "name": "Visual Design",
+          "tools": [
+            {
+              "name": "Adobe Photoshop / Illustrator"
+            }
+          ]
+        },
+        {
+          "name": "3D & Prototyping",
+          "tools": [
+            {
+              "name": "SolidWorks / Fusion 360"
+            },
+            {
+              "name": "3D Printing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Languages",
+      "categories": [
+        {
+          "name": "Language Proficiencies",
+          "tools": [
+            {
+              "name": "English — TOEIC 900"
+            },
+            {
+              "name": "Chinese — Native"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿type,organization/,role,begin_m,end_m,related_work,tag,introd,show_default,show_design
+Education,National Example University - Master's in Interaction Design,,2023/9/1,2025/6/30,"[sample1,sample2]","[""HCI"",""UX Research"",""Data Visualization""]","Thesis: User-Centered Design for Information Visualization
+Research areas: UX Research, Data Visualization, HCI
+Published 2 conference papers.",TRUE,TRUE
+Education,National Example University - Bachelor's in Product Design,,2018/9/1,2022/6/30,,"[""Industrial Design"",""Product Design""]",Focus: Industrial Design & Product Development,TRUE,TRUE
+Work Experience,Example Tech Company,UX Designer,2022/7/1,2023/8/31,,"[""UX Design"",""User Research"",""Design System""]","Led user research for 3 product features
+Designed and implemented A/B tests improving conversion by 12%
+Collaborated with engineering team on design system components",TRUE,TRUE
+Work Experience,Design Studio XYZ,Design Intern,2021/7/1,2021/12/31,,"[""UX Design"",""Prototyping""]","Assisted in user research and competitive analysis
+Created wireframes and prototypes for client projects",TRUE,TRUE
+Program / Workshop / Side Project,Open Data Hackathon 2024,Data Analyst / Visualization,2024/3/1,2024/3/3,[sample3],"[""Data Analysis"",""Hackathon"",""Visualization""]","Built an interactive traffic safety dashboard using open government data
+Won 2nd place among 30 teams",TRUE,TRUE
+Program / Workshop / Side Project,Big Data Analytics Training Program,Data Analysis,2022/11/1,2023/1/31,,"[""Certification"",""Data Analysis""]","Completed 400+ hours professional training
+Obtained 3 certifications in data analysis and machine learning",TRUE,TRUE
