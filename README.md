@@ -23,48 +23,46 @@
 
 ---
 
-## 📐 系統架構
+## 📐 系統架構與渲染流程
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                    使用者 (Browser)                        │
-│  URL:  /#/{routeKey}/{workCode}                          │
-└──────────┬───────────────────────────────────┬────────────┘
-           │                                   │
-    ┌──────▼──────┐                    ┌───────▼───────┐
-    │ React SPA   │                    │ Admin GUI     │
-    │ (Port 3000) │                    │ (/admin)      │
-    └──────┬──────┘                    └───────┬───────┘
-           │                                   │
-    ┌──────▼──────────────────────┐    ┌───────▼───────┐
-    │ Custom Hooks               │    │ Express API   │
-    │ useRouteKey                │    │ (Port 3001)   │
-    │ usePortfolioData           │    │ 讀寫 JSON     │
-    │ useExperienceData          │    └───────────────┘
-    │ useSkillData / usePublish  │
-    └──────┬──────────────────────┘
-           │
-    ┌──────▼──────────────────────┐
-    │ JSON Data Files            │
-    │ src/work_list/             │
-    │   portfolioRoutes.json     │  ← 路由配置 (手動/Admin)
-    │   allWorkData.json         │  ← 作品詳情 (Excel 生成)
-    │   portfolioMap.json        │  ← 作品代碼對照 (Excel 生成)
-    │   experienceData.json      │  ← 經歷 (CSV 生成)
-    │   publishData.json         │  ← 發表 (CSV 生成)
-    │   skillsData.json          │  ← 技能 (手動/Admin)
-    └─────────────────────────────┘
-```
+本專案的核心設計哲學是 **「一套作品，多樣敘事」**。所有作品資料（AllWorkData）存放於統一的「池子」中，而路由配置（Routes）則決定了如何篩選與呈現這些作品。
 
-### 資料流概要
+### 1. 資料渲染流程 (Data Rendering Flow)
 
-```
-1. 使用者開啟 URL  →  useRouteKey 解析 routeKey 與 workCode
-2. usePortfolioData 根據 routeKey 讀取 portfolioRoutes.json 中對應的配置
-3. 合併 allWorkData.json 中的作品內容，按分類與順序組裝頁面資料
-4. React 元件渲染 Home / CV / Portfolio 區塊
-5. 若有 workCode，自動滾動至指定作品
-```
+當使用者存取網頁時，系統會執行以下流程：
+
+1.  **URL 解析 (Routing)**：`useRouteKey` Hook 從 URL 中解析出 `routeKey`（路徑名稱）與 `workCode`（作品代碼）。例如 `/#/ux_researcher/sample1` 中，`routeKey` 為 `ux_researcher`。
+2.  **配置讀取 (Config Loading)**：`usePortfolioData` Hook 根據 `routeKey` 從 `portfolioRoutes.json` 讀取該路徑的專屬配置。
+3.  **回退機制 (Fallback Logic)**：
+    *   若該路徑缺少特定欄位（如氣泡或頁尾），系統會自動回退 (Fallback) 讀取 `default` 路徑的設定。
+    *   這確保了你只需要定義該職缺「需要客製化」的部分，其餘共用內容會自動補齊。
+4.  **作品組裝 (Data Merging)**：
+    *   系統會根據路徑配置中的 `categories` 定義，從 `allWorkData.json` 的大池子中「撈取」指定的作品代碼（Codes）。
+    *   作品的呈現順序與分類，完全依照該路由路徑的設定排列。
+5.  **語系選取 (Localization)**：根據 `lang` 設定（`zh` 或 `en`），系統會優先選取對應語言的欄位（如 `fullNameEn`），若無英文內容則顯示預設中文。
+6.  **組件渲染**：React 根據組裝後的資料渲染首頁氣泡、側邊導覽列與作品詳細頁面。
+
+### 2. 不同路徑設定之差異
+
+| 配置項目 | 差異說明 |
+| :--- | :--- |
+| **首頁文案 (Home)** | 可針對特定公司或職缺撰寫專屬的歡迎語與職涯目標。 |
+| **首頁氣泡 (Blobs)** | **氣體驅動**。針對 UX 職位可放置 "User Research" 氣泡；針對開發職位可改為 "React/TS"。 |
+| **作品分類 (Categories)**| 這是最有感的部分。同一個專案，在 PM 路由中可分類為「產品規劃」，在設計路由中可分類為「介面設計」。 |
+| **CV 設定 (CV)** | 可設定顯示不同的經歷分組（Groups），或提供該職缺客製化的 CV 下載連結。 |
+
+---
+
+## 🎨 作品案例：模板設計故事 (ui3)
+
+本模板的設計初衷是解決 **「求職時重複製作作品集」** 的痛點。你可以參考以下案例了解本系統的應用：
+
+🔗 **案例詳情**：[求職導向之作品集網頁 AI 協作開發](https://peien-portfolio.vercel.app/#/default/ui3)
+
+### 設計亮點
+- **模組化架構**：回應不同職缺對作品呈現重點不一致的需求，降低重複編輯的負擔。
+- **AI 共創流程**：結合 VSCode Codex、Gemini CLI 與 Antigravity 進行協作，展示人類導向設計與 AI 高效開發的結合。
+- **客製化網址**：為不同面試官提供專屬網址，提升求職專業感與誠意度。
 
 ---
 
