@@ -73,6 +73,34 @@
 5.  **語系選取 (Localization)**：根據 `lang` 設定（`zh` 或 `en`），系統會優先選取對應語言的欄位（如 `fullNameEn`），若無英文內容則顯示預設中文。
 6.  **組件渲染**：React 根據組裝後的資料渲染首頁氣泡、側邊導覽列與作品詳細頁面。
 
+#### 資料流時序圖 (Sequence Diagram)
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant ReactApp
+    participant Hooks
+    participant DataFiles
+    
+    User->>Browser: 開啟網址 (例如 /#/pm/projectA)
+    Browser->>ReactApp: 載入應用
+    ReactApp->>Hooks: useRouteKey 解析 URL
+    Hooks-->>ReactApp: 回傳 routeKey="pm", workCode="projectA"
+    
+    ReactApp->>Hooks: usePortfolioData("pm")
+    Hooks->>DataFiles: 讀取 portfolioRoutes.json
+    Hooks->>DataFiles: 讀取 allWorkData.json & Maps
+    DataFiles-->>Hooks: 回傳原始資料
+    
+    Hooks->>Hooks: 資料正規化 (過濾分類、合併預設值)
+    Hooks-->>ReactApp: 回傳完整頁面資料 (Home, CV, Portfolio)
+    
+    ReactApp->>ReactApp: 渲染 Layout 與 Components
+    ReactApp->>ReactApp: 滾動定位至 works-projectA
+    ReactApp-->>Browser: 顯示完整頁面
+```
+
 ### 2. 不同路徑設定之差異
 
 | 配置項目 | 差異說明 |
