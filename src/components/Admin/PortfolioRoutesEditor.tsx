@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import '../../admin.css';
 import CategoryEditor from './CategoryEditor';
 import SkillsEditor from './SkillsEditor';
+import BlobsEditor from './BlobsEditor';
 
 interface PortfolioRoutesEditorProps {
   initialContent: string;
@@ -547,6 +548,17 @@ const PortfolioRoutesEditor: React.FC<PortfolioRoutesEditorProps> = ({
                 rows={6}
               />
             </div>
+          </div>
+
+          <div className="editor-section">
+            <h4 className="editor-section-title">Home Blobs（首頁氣泡）</h4>
+            <div className="editor-help-text" style={{ marginBottom: '1rem' }}>
+              控制首頁右側的技能氣泡，可拖拽調整位置、調整大小、顏色與文字。每個路由可以有不同的氣泡配置。
+            </div>
+            <BlobsEditor
+              blobs={selectedProfileData.blobs || selectedProfileData.home?.blobs || []}
+              onChange={(newBlobs) => handleFieldChange(selectedProfileKey, ['blobs'], newBlobs)}
+            />
           </div>
 
           <div className="editor-section">

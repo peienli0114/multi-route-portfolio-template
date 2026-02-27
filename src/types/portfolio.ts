@@ -55,16 +55,35 @@ export type CvSettings = {
   groups: string[] | null;
 };
 
+export type BlobConfig = {
+  id: string;
+  label: string;
+  size: 'large' | 'small';
+  /** CSS percentage position relative to blob-container */
+  x: string;
+  y: string;
+  /** CSS percentage width; defaults are 40% for large, 12% for small */
+  width?: string;
+  /** Radial gradient center color (large blobs only) */
+  color?: string;
+  /** Animation duration in seconds */
+  animDuration?: number;
+  /** Animation delay in seconds */
+  animDelay?: number;
+};
+
 export type PortfolioHomeConfig = {
   badge?: string;
   title?: string;
   intro?: string | string[];
+  blobs?: BlobConfig[];
 };
 
 export type PortfolioHomeContent = {
   badge: string;
   title: string;
   intro: string[];
+  blobs: BlobConfig[];
 };
 
 export type PortfolioFooterConfig = {
@@ -100,6 +119,7 @@ export type PortfolioRouteEntry = {
   cv?: CvRouteValue;
   categories?: Record<string, PortfolioCode[]>;
   home?: PortfolioHomeConfig;
+  blobs?: BlobConfig[];
   footer?: PortfolioFooterConfig;
   cvSummary?: Array<string | string[]>;
   skills?: SkillGroupData[];

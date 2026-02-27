@@ -1,12 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { PortfolioHomeContent } from '../../types/portfolio';
+import { PortfolioHomeContent, BlobConfig } from '../../types/portfolio';
 import HomeBackgroundGrid from './HomeBackgroundGrid';
 
 type HomeSectionProps = {
   onNavigateCv: () => void;
   onNavigatePortfolio: () => void;
   content: PortfolioHomeContent;
+};
+
+/** Render a single blob circle from config */
+const BlobCircle: React.FC<{ blob: BlobConfig; index: number }> = ({ blob, index }) => {
+  const isLarge = blob.size === 'large';
+  const width = blob.width || (isLarge ? '40%' : '12%');
+
+  const style: React.CSSProperties = {
+    position: 'absolute',
+    left: blob.x,
+    top: blob.y,
+    width,
+    aspectRatio: '1',
+    animationDuration: blob.animDuration ? `${blob.animDuration}s` : undefined,
+    animationDelay: blob.animDelay ? `${blob.animDelay}s` : undefined,
+  };
+
+  // Build label with line breaks
+  const labelParts = blob.label.split('\n');
+
+  if (isLarge) {
+    // Large blob: has gradient ::before pseudo-element via CSS class
+    return (
+      <div
+        className={`blob-circle blob-large`}
+        style={{
+          ...style,
+          '--blob-color': blob.color || '#fd9225',
+        } as React.CSSProperties}
+      >
+        <span>
+          {labelParts.map((part, i) => (
+            <React.Fragment key={i}>
+              {part}
+              {i < labelParts.length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </span>
+      </div>
+    );
+  }
+
+  // Small blob
+  return (
+    <div className="blob-circle blob-small" style={style}>
+      <span>
+        {labelParts.map((part, i) => (
+          <React.Fragment key={i}>
+            {part}
+            {i < labelParts.length - 1 && <br />}
+          </React.Fragment>
+        ))}
+      </span>
+    </div>
+  );
 };
 
 const HomeSection: React.FC<HomeSectionProps> = ({
@@ -47,38 +102,9 @@ const HomeSection: React.FC<HomeSectionProps> = ({
 
       <div className="home-graphic-col">
         <div className="blob-container">
-          <div className="blob-circle blob-1">
-            <span>User<br />Experience<br />Research</span>
-          </div>
-          <div className="blob-circle blob-2">
-            <span>Data<br />Analysis</span>
-          </div>
-          <div className="blob-circle blob-3">
-            <span>Design<br />Development</span>
-          </div>
-
-          <div className="blob-circle blob-4">
-            <span>Behavior<br />&<br />Needs<br />Analysis</span>
-          </div>
-          <div className="blob-circle blob-5">
-            <span>Interactive<br />Design</span>
-          </div>
-          <div className="blob-circle blob-6">
-            <span>Visualization<br />Dashboard</span>
-          </div>
-          <div className="blob-circle blob-7">
-            <span>Industrial<br />Design</span>
-          </div>
-
-          {/* Modeling & Prediction is overlapping 2 and 4? I'll add it as extra or merge */}
-          <div className="blob-circle blob-8">
-            <span>Modeling<br />&<br />Prediction</span>
-          </div>
-
-          <div className="blob-circle blob-9">
-            <span>AI<br />Application</span>
-          </div>
-
+          {content.blobs.map((blob, index) => (
+            <BlobCircle key={blob.id} blob={blob} index={index} />
+          ))}
         </div>
       </div>
     </div>

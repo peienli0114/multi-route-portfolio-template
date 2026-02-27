@@ -12,6 +12,7 @@
 | 功能 | 說明 |
 | :--- | :--- |
 | 🎯 **多路由版本** | 透過 URL 路由參數（如 `/#/pm/`、`/#/ux_researcher/`）呈現不同版本的作品集，客製化首頁、CV、作品分類與排序 |
+| 🫧 **可自訂首頁氣泡** | 首頁右側的技能氣泡完全由資料驅動，透過 Admin GUI 可即時拖拽調整位置、大小、顏色與文字。每個路由版本可配置獨立的氣泡 |
 | 🌐 **中英雙語** | 每一筆作品與路由皆可同時設定中文與英文內容，透過路由的 `lang` 參數快速切換 |
 | 📊 **求職分類策略** | 同一組作品可依據不同職缺重新分類與排序，一套作品打造專屬的求職敘事 |
 | 🖥️ **後台管理 (Admin GUI)** | 內建 Express 後端 + 瀏覽器管理介面，可直接編輯路由配置、經歷、發表與技能資料 |
@@ -162,7 +163,9 @@ yarn start
     badge?: string;          // 首頁標語 badge
     title?: string;          // 首頁主標題
     intro?: string[];        // 首頁段落（陣列，每項一段）
+    blobs?: BlobConfig[];    // 首頁技能氣泡（優先級最高）
   };
+  blobs?: BlobConfig[];      // 路由氣泡配置（備選）
   footer?: {
     title?: string;          // 頁尾標題
     message?: string;        // 頁尾訊息
@@ -175,6 +178,26 @@ yarn start
   };
 }
 ```
+
+### 氣泡 (Blobs) 配置說明
+
+首頁右側的技能氣泡完全由資料驅動。每個氣泡的結構如下：
+
+```typescript
+{
+  id: string;           // 唯一 ID
+  label: string;        // 顯示文字（用 \n 換行）
+  size: 'large' | 'small';  // 大氣泡有漸層背景，小氣泡是半透明白色
+  x: string;            // 水平位置（CSS 百分比，如 "25%"）
+  y: string;            // 垂直位置（CSS 百分比，如 "10%"）
+  width?: string;       // 寬度（預設大氣泡 40%，小氣泡 12%）
+  color?: string;       // 漸層顏色（僅限大氣泡，如 "#fd9225"）
+  animDuration?: number; // 浮動動畫時長（秒）
+  animDelay?: number;   // 動畫延遲（秒）
+}
+```
+
+**優先級**：`home.blobs` > 路由 `blobs` > `default` 路由 `blobs` > 內建預設值
 
 ### 作品資料欄位說明
 
@@ -245,6 +268,7 @@ yarn dev
 
 Admin GUI 提供：
 - **portfolioRoutes.json 編輯**：新增/編輯路由版本
+- **首頁氣泡編輯器 🫧**：在路由編輯器內，可拖拽調整氣泡位置、修改文字/大小/顏色/動畫
 - **experienceData.json 編輯**：管理經歷資料
 - **publishData.json 編輯**：管理發表與獎項
 - **skillsData.json 編輯**：管理技能列表
@@ -418,11 +442,12 @@ yarn build
 
 1. 在 `portfolioRoutes.json` 新增路由 `"company_a_ux"`
 2. 設定首頁文案針對該職缺撰寫
-3. 將作品重新分類，突顯 UX 相關專案
-4. 產生專屬連結：`https://your-site.vercel.app/#/company_a_ux/`
-5. 將此連結放在履歷上
+3. 自訂首頁氣泡，突顯 UX 相關技能（如 User Research、Usability Testing）
+4. 將作品重新分類，突顯 UX 相關專案
+5. 產生專屬連結：`https://your-site.vercel.app/#/company_a_ux/`
+6. 將此連結放在履歷上
 
-多個路由可同時存在，互不干擾。你可以為不同職缺建立不同的呈現版本。
+多個路由可同時存在，互不干擾。你可以為不同職缺建立不同的呈現版本與氣泡。
 
 ## 🎯 使用範例：提供特定作品連結
 

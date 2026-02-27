@@ -47,7 +47,96 @@
       "Data & AI Projects": [
         "sample3"
       ]
-    }
+    },
+    "blobs": [
+      {
+        "id": "blob-1",
+        "label": "User\nExperience\nResearch",
+        "size": "large",
+        "x": "24%",
+        "y": "11%",
+        "width": "40%",
+        "color": "#fd9225",
+        "animDuration": 7,
+        "animDelay": 0
+      },
+      {
+        "id": "blob-2",
+        "label": "Data\nAnalysis",
+        "size": "large",
+        "x": "5%",
+        "y": "45%",
+        "width": "40%",
+        "color": "#44acaf",
+        "animDuration": 8,
+        "animDelay": 1
+      },
+      {
+        "id": "blob-3",
+        "label": "Design\nDevelopment",
+        "size": "large",
+        "x": "46%",
+        "y": "43%",
+        "width": "40%",
+        "color": "#ff6b6b",
+        "animDuration": 6,
+        "animDelay": 2
+      },
+      {
+        "id": "blob-4",
+        "label": "Behavior\n&\nNeeds\nAnalysis",
+        "size": "small",
+        "x": "20%",
+        "y": "25%",
+        "animDuration": 9,
+        "animDelay": 0.5
+      },
+      {
+        "id": "blob-5",
+        "label": "Interactive\nDesign",
+        "size": "small",
+        "x": "61%",
+        "y": "29%",
+        "animDuration": 7.5,
+        "animDelay": 1.5
+      },
+      {
+        "id": "blob-6",
+        "label": "Visualization\nDashboard",
+        "size": "small",
+        "x": "37%",
+        "y": "49%",
+        "animDuration": 8.5,
+        "animDelay": 2.5
+      },
+      {
+        "id": "blob-7",
+        "label": "Industrial\nDesign",
+        "size": "small",
+        "x": "65%",
+        "y": "40%",
+        "animDuration": 6.5,
+        "animDelay": 1.2
+      },
+      {
+        "id": "blob-8",
+        "label": "Modeling\n&\nPrediction",
+        "size": "small",
+        "x": "16%",
+        "y": "38%",
+        "animDuration": 7,
+        "animDelay": 0.8
+      },
+      {
+        "id": "blob-9",
+        "label": "AI\nApplication",
+        "size": "small",
+        "x": "38%",
+        "y": "61%",
+        "animDuration": 8,
+        "animDelay": 1.8
+      }
+    ]
   },
   "company_a_ux": {
     "siteTitle": "Your Name - UX Application for Company A",
@@ -150,6 +239,77 @@
       "Data & Technical Projects": [
         "sample3"
       ]
-    }
+    },
+    "blobs": [
+      {
+        "id": "ux-blob-1",
+        "label": "User\nResearch",
+        "size": "large",
+        "x": "25%",
+        "y": "12%",
+        "width": "42%",
+        "color": "#6366f1",
+        "animDuration": 7,
+        "animDelay": 0
+      },
+      {
+        "id": "ux-blob-2",
+        "label": "Data\nAnalysis",
+        "size": "large",
+        "x": "8%",
+        "y": "42%",
+        "width": "38%",
+        "color": "#10b981",
+        "animDuration": 8,
+        "animDelay": 1
+      },
+      {
+        "id": "ux-blob-3",
+        "label": "Prototyping\n& Design",
+        "size": "large",
+        "x": "42%",
+        "y": "48%",
+        "width": "38%",
+        "color": "#f59e0b",
+        "animDuration": 6,
+        "animDelay": 2
+      },
+      {
+        "id": "ux-blob-4",
+        "label": "Usability\nTesting",
+        "size": "small",
+        "x": "15%",
+        "y": "18%",
+        "animDuration": 9,
+        "animDelay": 0.5
+      },
+      {
+        "id": "ux-blob-5",
+        "label": "Survey\nDesign",
+        "size": "small",
+        "x": "62%",
+        "y": "22%",
+        "animDuration": 7.5,
+        "animDelay": 1.5
+      },
+      {
+        "id": "ux-blob-6",
+        "label": "A/B\nTesting",
+        "size": "small",
+        "x": "32%",
+        "y": "55%",
+        "animDuration": 8.5,
+        "animDelay": 2.5
+      },
+      {
+        "id": "ux-blob-7",
+        "label": "Figma",
+        "size": "small",
+        "x": "72%",
+        "y": "38%",
+        "animDuration": 6.5,
+        "animDelay": 1.2
+      }
+    ]
   }
 }

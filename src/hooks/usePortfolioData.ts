@@ -3,6 +3,7 @@ import portfolioMap from '../work_list/portfolioMap.json';
 import portfolioRoutes from '../work_list/portfolioRoutes.json';
 import workDetails from '../work_list/allWorkData.json';
 import {
+  BlobConfig,
   PortfolioCategory,
   PortfolioCategoryWithMatrix,
   PortfolioCode,
@@ -53,6 +54,18 @@ const defaultCodes = Object.keys(portfolioMap).sort((a, b) =>
   a.localeCompare(b),
 );
 
+const DEFAULT_BLOBS: BlobConfig[] = [
+  { id: 'blob-1', label: 'User\nExperience\nResearch', size: 'large', x: '25%', y: '10%', width: '40%', color: '#fd9225', animDuration: 7, animDelay: 0 },
+  { id: 'blob-2', label: 'Data\nAnalysis', size: 'large', x: '5%', y: '40%', width: '40%', color: '#44acaf', animDuration: 8, animDelay: 1 },
+  { id: 'blob-3', label: 'Design\nDevelopment', size: 'large', x: '40%', y: '45%', width: '40%', color: '#ff6b6b', animDuration: 6, animDelay: 2 },
+  { id: 'blob-4', label: 'Behavior\n&\nNeeds\nAnalysis', size: 'small', x: '15%', y: '15%', animDuration: 9, animDelay: 0.5 },
+  { id: 'blob-5', label: 'Interactive\nDesign', size: 'small', x: '65%', y: '25%', animDuration: 7.5, animDelay: 1.5 },
+  { id: 'blob-6', label: 'Visualization\nDashboard', size: 'small', x: '35%', y: '50%', animDuration: 8.5, animDelay: 2.5 },
+  { id: 'blob-7', label: 'Industrial\nDesign', size: 'small', x: '75%', y: '40%', animDuration: 6.5, animDelay: 1.2 },
+  { id: 'blob-8', label: 'Modeling\n&\nPrediction', size: 'small', x: '5%', y: '30%', animDuration: 7, animDelay: 0.8 },
+  { id: 'blob-9', label: 'AI\nApplication', size: 'small', x: '30%', y: '75%', animDuration: 8, animDelay: 1.8 },
+];
+
 const DEFAULT_HOME_CONTENT: PortfolioHomeContent = {
   badge: 'Portfolio Template',
   title: 'Design × Research × Development',
@@ -60,6 +73,7 @@ const DEFAULT_HOME_CONTENT: PortfolioHomeContent = {
     'Hello! Welcome to this portfolio template. Replace this text in portfolioRoutes.json with your own introduction.',
     'This template supports multiple route configurations, bilingual content (Chinese/English), and customizable project categories.',
   ],
+  blobs: DEFAULT_BLOBS,
 };
 
 const DEFAULT_FOOTER_CONTENT: PortfolioFooterContent = {
@@ -81,14 +95,22 @@ const normalizeHomeIntro = (value?: string | string[]): string[] => {
 const normaliseHomeContent = (
   config: PortfolioHomeConfig | undefined,
   fallback: PortfolioHomeContent,
+  routeBlobs?: BlobConfig[],
 ): PortfolioHomeContent => {
   const badge = config?.badge?.trim() || fallback.badge;
   const title = config?.title?.trim() || fallback.title;
   const intro = normalizeHomeIntro(config?.intro);
+  // Priority: home.blobs > route.blobs > fallback.blobs
+  const blobs = (config?.blobs && config.blobs.length > 0)
+    ? config.blobs
+    : (routeBlobs && routeBlobs.length > 0)
+      ? routeBlobs
+      : fallback.blobs;
   return {
     badge,
     title,
     intro: intro.length ? intro : fallback.intro,
+    blobs,
   };
 };
 
@@ -319,13 +341,13 @@ export const usePortfolioData = (routeKey: string) => {
   }, [currentEntry, defaultCvConfig]);
 
   const defaultHomeContent = useMemo(
-    () => normaliseHomeContent(DEFAULT_ROUTE_ENTRY.home, DEFAULT_HOME_CONTENT),
+    () => normaliseHomeContent(DEFAULT_ROUTE_ENTRY.home, DEFAULT_HOME_CONTENT, DEFAULT_ROUTE_ENTRY.blobs),
     [],
   );
 
   const homeContent = useMemo(
-    () => normaliseHomeContent(currentEntry.home, defaultHomeContent),
-    [currentEntry.home, defaultHomeContent],
+    () => normaliseHomeContent(currentEntry.home, defaultHomeContent, currentEntry.blobs),
+    [currentEntry.home, currentEntry.blobs, defaultHomeContent],
   );
 
   const defaultFooterContent = useMemo(
