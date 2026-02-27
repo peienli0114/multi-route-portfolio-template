@@ -27,6 +27,37 @@
 
 本專案的核心設計哲學是 **「一套作品，多樣敘事」**。所有作品資料（AllWorkData）存放於統一的「池子」中，而路由配置（Routes）則決定了如何篩選與呈現這些作品。
 
+```
+┌──────────────────────────────────────────────────────────┐
+│                    使用者 (Browser)                        │
+│  URL:  /#/{routeKey}/{workCode}                          │
+└──────────┬───────────────────────────────────┬────────────┘
+           │                                   │
+    ┌──────▼──────┐                    ┌───────▼───────┐
+    │ React SPA   │                    │ Admin GUI     │
+    │ (Port 3000) │                    │ (/admin)      │
+    └──────┬──────┘                    └───────┬───────┘
+           │                                   │
+    ┌──────▼──────────────────────┐    ┌───────▼───────┐
+    │ Custom Hooks               │    │ Express API   │
+    │ useRouteKey                │    │ (Port 3001)   │
+    │ usePortfolioData           │    │ 讀寫 JSON     │
+    │ useExperienceData          │    └───────────────┘
+    │ useSkillData / usePublish  │
+    └──────┬──────────────────────┘
+           │
+    ┌──────▼──────────────────────┐
+    │ JSON Data Files            │
+    │ src/work_list/             │
+    │   portfolioRoutes.json     │  ← 路由配置 (手動/Admin)
+    │   allWorkData.json         │  ← 作品詳情 (Excel 生成)
+    │   portfolioMap.json        │  ← 作品代碼對照 (Excel 生成)
+    │   experienceData.json      │  ← 經歷 (CSV 生成)
+    │   publishData.json         │  ← 發表 (CSV 生成)
+    │   skillsData.json          │  ← 技能 (手動/Admin)
+    └─────────────────────────────┘
+```
+
 ### 1. 資料渲染流程 (Data Rendering Flow)
 
 當使用者存取網頁時，系統會執行以下流程：
