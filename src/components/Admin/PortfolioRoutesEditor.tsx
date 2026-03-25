@@ -3,6 +3,10 @@ import '../../admin.css';
 import CategoryEditor from './CategoryEditor';
 import SkillsEditor from './SkillsEditor';
 import BlobsEditor from './BlobsEditor';
+import CodeMirror from '@uiw/react-codemirror';
+import { markdown } from '@codemirror/lang-markdown';
+import { oneDark } from '@codemirror/theme-one-dark';
+import { EditorView } from '@codemirror/view';
 
 interface PortfolioRoutesEditorProps {
   initialContent: string;
@@ -115,6 +119,45 @@ const defaultNewProfileData = {
   categories: {}
 };
 
+
+// CodeMirror 文字編輯器 — 解決游標跳動問題
+const SmartTextEditor = ({
+  value,
+  onChange,
+  placeholder,
+  minHeight = '120px',
+}: {
+  value: string;
+  onChange: (val: string) => void;
+  placeholder?: string;
+  minHeight?: string;
+}) => {
+  return (
+    <div style={{ border: '1px solid #d1d5db', borderRadius: '6px', overflow: 'hidden', fontSize: '13.5px' }}>
+      <CodeMirror
+        value={value}
+        theme={oneDark}
+        extensions={[
+          markdown(),
+          EditorView.lineWrapping,
+          EditorView.theme({
+            '&': { minHeight },
+            '.cm-scroller': { fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace' },
+            '.cm-placeholder': { color: '#6b7280', fontStyle: 'italic' },
+          }),
+        ]}
+        placeholder={placeholder}
+        onChange={onChange}
+        basicSetup={{
+          lineNumbers: true,
+          highlightActiveLine: true,
+          foldGutter: false,
+          autocompletion: false,
+        }}
+      />
+    </div>
+  );
+};
 
 const PortfolioRoutesEditor: React.FC<PortfolioRoutesEditorProps> = ({
   initialContent,
@@ -540,12 +583,11 @@ const PortfolioRoutesEditor: React.FC<PortfolioRoutesEditorProps> = ({
             </div>
             <div className="editor-row">
               <label className="editor-label">Introduction</label>
-              <textarea
-                className="editor-textarea"
+              <SmartTextEditor
                 value={homeIntroDraft}
                 placeholder={"Write your intro here.\n\nNew paragraph."}
-                onChange={(e) => handleStringArrayChange(selectedProfileKey, ['home', 'intro'], e.target.value)}
-                rows={6}
+                onChange={(val) => handleStringArrayChange(selectedProfileKey, ['home', 'intro'], val)}
+                minHeight="140px"
               />
             </div>
           </div>
@@ -569,16 +611,15 @@ const PortfolioRoutesEditor: React.FC<PortfolioRoutesEditorProps> = ({
             <div className="editor-help-text" style={{ marginBottom: '1rem' }}>
               Format: <b>Double Enter</b> for new paragraph. <b>Single Enter</b> for line break. Start with <code>- </code> for bullets.
             </div>
-            <textarea
-              className="editor-textarea code"
+            <SmartTextEditor
               value={cvSummaryDraft}
-              onChange={(e) => {
-                setCvSummaryDraft(e.target.value);
-                const parsed = parseSmartCvSummary(e.target.value);
+              placeholder={"your.email@example.com\n\n**Experience**:\n- Job 1\n- Job 2"}
+              onChange={(val) => {
+                setCvSummaryDraft(val);
+                const parsed = parseSmartCvSummary(val);
                 handleFieldChange(selectedProfileKey, ['cvSummary'], parsed);
               }}
-              rows={10}
-              placeholder={"your.email@example.com\n\n**Experience**:\n- Job 1\n- Job 2"}
+              minHeight="240px"
             />
           </div>
 
