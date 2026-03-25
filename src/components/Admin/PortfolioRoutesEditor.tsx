@@ -205,8 +205,13 @@ const PortfolioRoutesEditor: React.FC<PortfolioRoutesEditorProps> = ({
   }, [initialContent]);
 
   // Update parent when allData changes
+  // IMPORTANT: also update lastSyncedContentRef here to prevent the loop:
+  // setAllData → onContentChange → parent updates initialContent → useEffect[initialContent] fires
+  // → setDataVersion → draft sync → setCvSummaryDraft → CodeMirror value resets → cursor jumps
   useEffect(() => {
-    onContentChange(safeStringifyJson(allData));
+    const newContent = safeStringifyJson(allData);
+    lastSyncedContentRef.current = newContent;
+    onContentChange(newContent);
   }, [allData, onContentChange]);
 
   const selectedProfileData = allData[selectedProfileKey];
